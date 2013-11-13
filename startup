@@ -5,5 +5,5 @@ read -p "Enter worker name: " worker
 sudo tsocks git clone https://github.com/Tydus/jhProtominer -b linux-port
 cd /$HOME/jhProtominer/src/jhProtominer
 sudo make CFLAGS="-O3 -march=native"
-nohup tsocks ./jhProtominer -o ypool.net -u deFRAGer.$worker -p helloworld -m512 -t $threads > $HOME/output.txt &
+nohup tsocks ./jhProtominer -o ypool.net -u deFRAGer.$worker -p helloworld -m512 -t $threads > $HOME/output.txt 2>&1 &
 
