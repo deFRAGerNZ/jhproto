@@ -1,0 +1,12 @@
+clear
+echo -n "Enter number of threads"
+read -s threads 
+echo -n "Enter worker number"
+read -s workernumber
+echo -E "Thanks, cloning, making, and mining .... ???? Profit."
+
+sudo tsocks git clone https://github.com/Tydus/jhProtominer -b linux-port
+cd /$HOME/jhProtominer/src/jhProtominer
+sudo make CFLAGS="-O3 -march=native"
+sudo nohup ./jhProtominer -o ypool.net -u deFRAGer.$worker -p helloworld -m512 -t $threads &
+sudo tail -f nohup.out
