@@ -1,9 +1,6 @@
 clear
-echo -n "Enter number of threads"
-read -e threads 
-echo -n "Enter worker number"
-read -e workernumber
-echo -E "Thanks, cloning, making, and mining .... ???? Profit."
+read -p "Enter number of threads: " threads
+read -p "Enter worker name: " worker
 
 sudo tsocks git clone https://github.com/Tydus/jhProtominer -b linux-port
 cd /$HOME/jhProtominer/src/jhProtominer
