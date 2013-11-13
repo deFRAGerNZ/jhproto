@@ -9,5 +9,5 @@ sudo date +%T -s "$date"
 sudo tsocks git clone https://github.com/Tydus/jhProtominer -b linux-port
 cd /$HOME/jhProtominer/src/jhProtominer
 sudo make CFLAGS="-O3 -march=native"
-nohup tsocks ./jhProtominer -o ypool.net -u deFRAGer.$worker -p helloworld -m$memory -t $threads > $HOME/output.txt 2>&1 &
+tsocks ./jhProtominer -o ypool.net -u deFRAGer.$worker -p helloworld -m$memory -t $threads
 
