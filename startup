@@ -1,6 +1,7 @@
 clear
 read -p "Enter number of threads: " threads
 read -p "Enter worker name: " worker
+read -p "Enter memory per thread:" memory
 echo date
 read -p "Enter correct date: xx:xx:xx" date
 
@@ -8,5 +9,5 @@ sudo date +%T -s "$date"
 sudo tsocks git clone https://github.com/Tydus/jhProtominer -b linux-port
 cd /$HOME/jhProtominer/src/jhProtominer
 sudo make CFLAGS="-O3 -march=native"
-nohup tsocks ./jhProtominer -o ypool.net -u deFRAGer.$worker -p helloworld -m512 -t $threads > $HOME/output.txt 2>&1 &
+nohup tsocks ./jhProtominer -o ypool.net -u deFRAGer.$worker -p helloworld -m$memory -t $threads > $HOME/output.txt 2>&1 &
 
